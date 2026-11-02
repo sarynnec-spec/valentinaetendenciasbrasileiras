@@ -1,0 +1,25 @@
+User-Agent: facebookexternalhit
+User-Agent: Facebot
+User-Agent: WhatsApp
+User-Agent: Twitterbot
+User-Agent: LinkedInBot
+User-Agent: TelegramBot
+Allow: /
+
+User-Agent: OAI-SearchBot
+User-Agent: ChatGPT-User
+User-Agent: GPTBot
+User-Agent: PerplexityBot
+User-Agent: Perplexity-User
+User-Agent: ClaudeBot
+User-Agent: Claude-SearchBot
+User-Agent: Google-Extended
+User-Agent: Applebot-Extended
+User-Agent: CCBot
+Allow: /
+
+User-Agent: *
+Allow: /
+
+Host: https://valentinaetendenciasbrasileiras.com
+Sitemap: https://valentinaetendenciasbrasileiras.com/sitemap.xml

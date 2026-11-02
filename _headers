@@ -1,0 +1,32 @@
+# Cabeçalhos HTTP do alojamento estático.
+#
+# O `headers()` do `next.config.ts` NÃO corre com `output: 'export'` — o
+# próprio Next avisa isso no build. Este ficheiro é quem faz o trabalho.
+#
+# ⚠️ Não há aqui `X-Robots-Tag: noindex`. O site está indexável de
+# propósito. Se algum dia for preciso voltar a escondê-lo, é aqui que se
+# acrescenta, E no `next.config.ts` — os dois, para dizerem o mesmo.
+
+/*
+  # Clickjacking: ninguém põe este site dentro de um iframe seu.
+  X-Frame-Options: SAMEORIGIN
+  # Impede o browser de adivinhar o tipo de um ficheiro e executá-lo.
+  X-Content-Type-Options: nosniff
+  # Não deixa vazar o caminho completo da página para sites de terceiros.
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Nada aqui precisa de câmara, microfone nem localização.
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Os ficheiros com impressão digital no nome nunca mudam de conteúdo.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# A media é estável e pesada — vale a pena guardá-la bem guardada.
+/imagens/*
+  Cache-Control: public, max-age=604800
+/images/*
+  Cache-Control: public, max-age=604800
+/videos/*
+  Cache-Control: public, max-age=604800
+/video/*
+  Cache-Control: public, max-age=604800
